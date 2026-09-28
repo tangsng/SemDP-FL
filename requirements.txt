@@ -1,0 +1,27 @@
+# SemDP-FL — tested environment (Python 3.10.12, 2x NVIDIA V100S 32GB, CUDA 12.x)
+
+# --- core deep learning ---
+torch==2.11.0+cu126
+torchvision==0.26.0+cu126
+transformers==5.8.0
+
+# --- data / numerics ---
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+datasets==5.0.1
+
+# --- plotting (paper figures 1-5 + graphical abstract) ---
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# --- misc ---
+PyYAML==5.4.1
+tqdm==4.67.3
+
+# Notes
+#  * `peft` is NOT required: LoRA is implemented directly in src/models/lora.py.
+#  * For CPU-only installs, drop the +cu126 local versions and install plain torch.
+#  * Install torch first, following https://pytorch.org/get-started/locally/ if
+#    your CUDA version differs (V100 = sm_70: use a cu12x build, NOT cu130).
